@@ -1,0 +1,88 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: #c8acbb; */
+    background-color: #FFC0CB;
+}
+
+.navbar a {
+  border-bottom: 3px solid transparent;
+}
+.navbar a.active {
+  border-bottom: 3px solid #041d36;
+}
+
+#footer {
+  bottom: 0;
+  width: 100%;
+
+}
+
+.container {
+    padding-top: 160px;
+    padding-bottom: 100px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.btn {
+    background-color: #ADD8E6;
+    color: #041d36;
+}
+
+.btn:hover {
+    background-color: #32adb9
+}
+
+.btn:active {
+    background-color: #82ebeb;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+/* login css */
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  
+.btn-google {
+    color: white !important;
+    background-color: #ea4335;
+}
+  
+.btn-facebook {
+    color: white !important;
+    background-color: #3b5998;
+}
+ 
+
+/* Sign up css */  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-google {
+    color: white !important;
+    background-color: #ea4335;
+  }
+  
+  .btn-facebook {
+    color: white !important;
+    background-color: #3b5998;
+  }
+  

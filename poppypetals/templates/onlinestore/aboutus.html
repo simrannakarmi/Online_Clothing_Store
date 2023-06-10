@@ -1,0 +1,30 @@
+{% extends 'onlinestore/base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+
+{% block nav_aboutus_class %}active{% endblock nav_aboutus_class %}
+
+{% block main-content %}
+<div class="container" style="padding-top: 100px;">
+    <h1><center>About Us</center></h1><hr/>
+    <center>
+    <img src="{% static 'onlinestore/images/banner/logo.png' %}" width="300" height="150">
+    </center>
+    <p>Poppy petals website is an ecommere website which sells clothes and accessories for babies, toddlers and kids.
+        <br/>Get Stylish Looks for your Kids at prices you'll love when you shop at Poppy Petals.
+    </p>    
+
+    <p>
+        Baby: 0-12 months
+        Toddler: 1-3 years
+        Kid: 4-8 years
+    </p>
+    <hr/>
+    <b>Contact Info:</b><br/><br/>
+    <p>
+        <b>Phone No.:</b> 982-3243580 <br/>
+        <b>Email:</b> poppypetals321@gmail.com
+    </p>
+    
+</div>
+{% endblock main-content %}

@@ -1,0 +1,71 @@
+{% extends 'onlinestore/base.html' %}
+{% load static %}
+{% block title %}Cart{% endblock title %}
+
+{% block nav_cart_class %}active{% endblock nav_cart_class %}
+
+{% block main-content %}
+<div class="container">
+
+    {% if cart_items %}
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+        </tr>
+        {% for item in cart_items %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>${{ item.product.price }}</td>
+                <td>
+                    <form method="POST" action="{% url 'update_quantity' item.id %}">
+                        {% csrf_token %}
+                        <input type="number" name="quantity" value="{{ item.quantity }}">
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+                <td>${{ item.subtotal }}</td>
+                <td>
+                    <form method="POST" action="{% url 'remove_from_cart' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3"></td>
+            <td>Total: ${{ cart_total }}</td>
+            <td>
+                <form method="POST" action="{% url 'clear_cart' %}">
+                    {% csrf_token %}
+                    <button type="submit">Clear Cart</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    {% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+
+    {% comment %} {% if cart_items %}
+        <ul>
+            {% for item in cart_items %}
+                {% if item.image != NULL %}
+                <img class="card-img-top" src="/media/{{ item.image }}" alt="Card image tshirt">
+                {% endif %}
+                <li>{{ item.name }} - Price: ${{ item.price }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %} {% endcomment %}
+
+<a href="{% url 'onlinestore:home' %}">Continue Shopping</a>
+
+</div>
+
+{% endblock main-content %}
