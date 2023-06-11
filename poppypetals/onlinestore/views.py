@@ -47,7 +47,6 @@ def add_to_cart(request, item_id):
     return redirect('onlinestore.cart')
 
 @login_required
-@login_required
 @require_POST
 def remove_from_cart(request, item_id):
     item = get_object_or_404(CartItem, id=item_id, cart__user=request.user)
@@ -94,6 +93,7 @@ def accessories(request):
 
 def aboutus(request):
     context = {}
+    
     return render(request, 'onlinestore/aboutus.html', context)
 
 def store(request):
