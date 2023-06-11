@@ -1,2 +1,2 @@
-# online-clothing-store
-Online Clothing Store is an ecommerce website
+# Online_Clothing_Store
+Online Clothing Store is an ecommerce website.
