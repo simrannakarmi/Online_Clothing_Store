@@ -1,0 +1,32 @@
+{% extends 'onlinestore/base.html' %}
+{% load static %}
+{% block title %}Accessories Page{% endblock title %}
+
+{% block nav_accessories_class %}active{% endblock nav_accessories_class %}
+
+{% block main-content %}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for item in accessories_items %}
+            <div class="col-md-4">
+                <div class="card h-100" >
+                    {% if item.image != NULL %}
+                    <img class="card-img-top" src="/media/{{ item.image }}" alt="Card image tshirt">
+                    {% endif %}
+                    <div class="card-body">
+                    <h5 class="card-title">{{ item.item_name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <p class="card-text">Price - {{ item.price }}</p>
+                    
+                    <a href="#" class="btn">Buy Now</a>
+                    <a href="{% url 'onlinestore:add_to_cart' item_id=item.id %}" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>No products available in this category.</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main-content %}
